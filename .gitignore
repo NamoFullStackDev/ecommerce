@@ -131,3 +131,4 @@ _modules/*
 /writable/logs/
 /writable/session/
 /.env
+/public/uploads/
