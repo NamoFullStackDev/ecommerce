@@ -23,8 +23,18 @@ class ProductsController extends BaseController
     ];
     return view('Admin/Products/index', $data);
   }
+  // Show single product
+  public function show($id)
+  {
+    $product = $this->productModel->find($id);
+    if (!$product) {
+      throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Product not found');
+    }
 
-    // Show New Product form
+    return view('Admin/Products/show', ['title' => $product['name'], 'product' => $product]);
+  }
+
+  // Show New Product form
   public function new()
   {
     return view('Admin/Products/new', ['title' => 'Add Product']);

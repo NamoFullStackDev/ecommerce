@@ -28,6 +28,7 @@
           <?php endif; ?>
         </td>
         <td>
+          <a href="<?= site_url('admin/products/show/'.$p['id']) ?>" class="btn btn-primary btn-sm">View</a>
           <a href="<?= site_url('admin/products/delete/'.$p['id']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Delete this product?')">Delete</a>
         </td>
       </tr>
